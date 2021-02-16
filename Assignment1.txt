@@ -1,0 +1,44 @@
+            string title = "Assignment ";
+
+            string title2 = " Part";
+
+            int assignmentNumber = 1;
+
+            int partNumber = 2;
+
+            string name = "Bilyan Nikolov";
+
+            int section = 4;
+
+            char firstInitial = 'b';
+
+            string lastname = "nikolov";
+
+            string email = "@conestoga.on.ca";
+
+            string experience = "No previous programming experience.";
+
+            string country = "Canada";
+
+
+            Console.WriteLine(name + " - "+ title + assignmentNumber + title2 + partNumber);
+
+            Console.WriteLine("Name: " + name);
+
+            Console.WriteLine("Section Number: " + section);
+
+            Console.WriteLine("Project Name: " + firstInitial + lastname + section);
+
+            Console.WriteLine("Email: " + firstInitial + lastname + email);
+
+            Console.Write("Enter a weight in kg: ");
+            double kilograms = Convert.ToDouble(Console.ReadLine());
+
+            double lbs = kilograms * 2.20462262185;
+            Console.WriteLine(kilograms + " kilograms is " + lbs + " Pounds");
+
+            Console.WriteLine("Experience: " + experience);
+
+            Console.WriteLine("Country: " + country);
+
+            Console.ReadLine();
