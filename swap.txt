@@ -1,0 +1,22 @@
+        static void swap2Num()
+        {
+            int T;
+            int A, B;
+            string strA;
+            string strB;
+
+            strA = Console.ReadLine();
+            strB = Console.ReadLine();
+
+            A = int.Parse(strA);
+            B = int.Parse(strB);
+
+            T = A;
+            A = B;
+            B = T;
+
+            Console.WriteLine(A.ToString());
+            Console.WriteLine(B.ToString());
+
+
+        }
