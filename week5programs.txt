@@ -1,0 +1,74 @@
+        static void Main(string[] args)
+        {
+
+            //string strDay = "M";
+
+            //strDay = strDay.ToUpper(); //upper case
+
+
+            //if(strDay == "MON" || strDay=="M" || strDay=="MONDAY")
+            //{
+            //    Console.WriteLine("Monday");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Some day");
+            //}
+
+            //int x = 2;
+            //if (isOdd(x))
+            //    Console.WriteLine("odd");
+            //else
+            //    Console.WriteLine("even");
+
+            //printDaysOfTheMonth("February");
+
+
+            //PrintGrade(54.9);
+
+            printAsc(3, 1, 4);
+            Console.ReadLine();
+
+        }
+
+        static bool isOdd(int num)
+        {
+            if (num % 2 != 0)
+                return true;
+            else
+                return false;
+        }
+
+        static void printDaysOfTheMonth(string mth)
+        {
+            switch(mth.ToUpper())
+            {
+                case "FEBRUARY":
+                    Console.WriteLine("28 days");
+                    break;
+                case "APRIL":
+                case "JUNE":
+                case "SEPTEMBER":
+                case "NOVEMBER":
+                    Console.WriteLine("30 days");
+                    break;
+                default:
+                    Console.WriteLine("31 days");
+                    break;
+            }
+        }
+
+        static void PrintGrade(Double intGrade)
+        {
+            if(intGrade >= 80 && intGrade <= 100)
+                Console.WriteLine("A");
+            else if (intGrade >= 70 && intGrade <= 79)
+                Console.WriteLine("B");
+            else if (intGrade >= 60 && intGrade <= 69)
+                Console.WriteLine("C");
+            else if (intGrade >= 55 && intGrade <= 69)
+                Console.WriteLine("D");
+            else 
+                Console.WriteLine("F");
+
+        }
