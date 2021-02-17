@@ -1,0 +1,18 @@
+using System;
+					
+public class Program
+{
+		public static void Main()
+	{
+	  int a = 1;
+      int b = 2;
+      int sum = AddTwoInts(a,b);
+      
+      Console.WriteLine(sum); //Display the value of sum
+	}
+	public static int AddTwoInts(int firstInt, int secondInt)
+	{
+		return firstInt + secondInt;
+	}
+
+}
