@@ -1,0 +1,30 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int dayNum;
+		Console.Write(GetDay(0));
+		dayNum = Convert.ToInt16(Console.ReadLine());
+	}
+	static string GetDay(int dayNum)
+	{
+	string dayName;
+		
+		switch (dayNum)
+		{
+			case 0:
+			dayName = "Sunday";
+			break;
+			case 1:
+			dayName = "Monday";
+			break;
+			default:
+			dayName = "Not valid input";
+			break;
+		
+		}
+	return dayName;
+	}
+}
