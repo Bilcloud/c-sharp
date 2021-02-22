@@ -1,0 +1,33 @@
+	public static void Main()
+	{	
+		Console.Write("Enter the month you registered for membership:");
+		string registerMounth = Console.ReadLine();
+		Console.Write("Enter your embership number:");
+		int membershipNumber = Convert.ToInt32(Console.ReadLine());
+		Console.Write("Enter the number of items you purchased:");
+		int purchasedNumber = Convert.ToInt32(Console.ReadLine());
+		Console.Write("Enter the total cost of all items:");
+		double totalCost = Convert.ToDouble(Console.ReadLine());
+		
+		double doublePurchasedNumber = (int) purchasedNumber;
+		
+		Console.Write(itemCostDiscount(doublePurchasedNumber, totalCost));
+		
+	}
+		static double itemCostDiscount(double purchasedNumber, double totalCost)
+		{
+			double result;
+			if (7 < purchasedNumber && purchasedNumber < 10)
+			{
+				result = totalCost - 30;
+			}
+			else if (purchasedNumber >= 10)
+			{
+				result = totalCost - totalCost / 2;
+			}
+			else
+			{
+				result = totalCost;
+			}
+			return result;
+		}
