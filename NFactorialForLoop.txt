@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace week6
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            int i;
+            int factorial = 1;
+            int n;
+
+            Console.Write("Enter a number: ");
+            n = int.Parse(Console.ReadLine());
+            for (i = 1; i <= n; i++)
+            {
+                factorial = factorial * i;
+            }
+            Console.Write("Factorial of " + n + " is: " + factorial);
+            Console.ReadLine();
+        }
+    }
+}
