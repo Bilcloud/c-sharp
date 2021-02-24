@@ -1,0 +1,161 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace A2NikolovBilyan4P1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.Write("Enter the month you registered for membership:");
+			string registerMounth = Console.ReadLine();
+			Console.Write("Enter your embership number:");
+			int membershipNumber = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Enter the number of items you purchased:");
+			int purchasedNumber = Convert.ToInt32(Console.ReadLine());
+			Console.Write("Enter the total cost of all items:");
+			double totalCost = Convert.ToDouble(Console.ReadLine());
+
+
+			double doublePurchasedNumber = (int)purchasedNumber;
+
+			//Console.WriteLine(itemCostDiscount(doublePurchasedNumber, totalCost));
+			double x;
+			double y;
+			double z;
+			double finalCost;
+
+			x = itemCostDiscount(doublePurchasedNumber, totalCost);
+
+			y = MembershipDiscount(registerMounth, x);
+
+			z = x - y;
+
+			finalCost = z + (z * 15 / 100);
+
+			if (finalCost < 20)
+			{
+				finalCost = 0;
+			}
+
+			Console.WriteLine("Membership number: " + membershipNumber);
+			Console.WriteLine("Total Items: " + purchasedNumber);
+			Console.WriteLine("Total Cost before adjustment: " + totalCost);
+			Console.WriteLine("Final Cost: " + finalCost);
+			Console.ReadLine();
+
+		}
+		static double itemCostDiscount(double purchasedNumber, double totalCost)
+		{
+			double result;
+
+			if (purchasedNumber >= 10 && totalCost > 200)
+			{
+				result = totalCost - (totalCost / 2) - (totalCost / 10);
+			}
+			else if (7 < purchasedNumber && purchasedNumber < 10 && totalCost > 200)
+			{
+				result = (totalCost - 30) - (totalCost / 10);
+			}
+			else if (7 >= purchasedNumber && totalCost > 200)
+			{
+				result = totalCost - (totalCost / 10);
+			}
+			else if (purchasedNumber >= 10 && 50 < totalCost && totalCost <= 200)
+			{
+				result = totalCost - (totalCost / 2);
+			}
+			else if (7 < purchasedNumber && purchasedNumber < 10 && 50 < totalCost && totalCost <= 200)
+			{
+				result = totalCost - 30;
+			}
+			else if (7 < purchasedNumber && 50 < totalCost && totalCost <= 200)
+			{
+				result = totalCost;
+			}
+			else if (purchasedNumber >= 10 && 50 > totalCost)
+			{
+				result = totalCost - (totalCost / 2) - 3.00;
+			}
+			else if (7 < purchasedNumber && purchasedNumber < 10 && 50 > totalCost)
+			{
+				result = totalCost - 30 - 3.00;
+			}
+			else if (purchasedNumber <= 7 && 50 > totalCost)
+			{
+				result = totalCost - 3.00;
+			}
+			else
+			{
+				result = totalCost;
+			}
+			return result;
+		}
+
+		static double MembershipDiscount(string registerMounth, double x)
+		{
+
+			double discount = 0;
+
+			switch (registerMounth)
+			{
+				case "January":
+					discount = 12;
+					x = x - discount;
+					break;
+				case "February":
+					discount = 12;
+					x = x - discount;
+					break;
+				case "March":
+					discount = 12;
+					x = x - discount;
+					break;
+				case "April":
+					discount = 12;
+					x = x - discount;
+					break;
+				case "May":
+					discount = 5;
+					x = x + discount;
+					break;
+				case "June":
+					discount = 1.00;
+					x = x - discount;
+					break;
+				case "July":
+					discount = 1.00;
+					x = x - discount;
+					break;
+				case "August":
+					discount = 1.00;
+					x = x - discount;
+					break;
+				case "September":
+					discount = 1.00;
+					x = x - discount;
+					break;
+				case "October":
+					discount = 1.00;
+					x = x - discount;
+					break;
+				case "November":
+					discount = 1.00;
+					x = x - discount;
+					break;
+				case "December":
+					discount = 1.00;
+					x = x - discount;
+					break;
+				default:
+					Console.Write("Enter a valid mounth");
+					break;
+			}
+			return discount;
+		}
+
+
+}	}	
