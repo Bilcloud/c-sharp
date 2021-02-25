@@ -13,7 +13,7 @@ public class week5
         {
             if (mark > 79)
             {
-                Console.WriteLine("Your Grade: " + "A");
+                Console.WriteLine("Your Grade:" + "A");
             }
             else if (mark > 69)
             {
