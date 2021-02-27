@@ -1,0 +1,110 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+				//string firstName;
+		//string lastName;
+		//double area;
+		Console.Write("Enter your first name : ");
+		string firstName = Console.ReadLine();
+		
+		Console.Write("Enter your last name : ");
+		string lastName = Console.ReadLine();
+		
+		Console.Write("Enter your year of birth : ");
+		int birthYear = Convert.ToInt32(Console.ReadLine());
+		int age = 2021 - birthYear;
+		
+		Console.Write("Enter the length of the base of triangle : ");
+		double lengthBaseTriangle = Convert.ToDouble(Console.ReadLine());
+			decimal lengthBaseTriangle2 = Convert.ToDecimal(Console.ReadLine());
+				float lengthBaseTriangle3 = float.Parse(Console.ReadLine());
+		
+		Console.Write("Enter the height of triangle : ");
+		double heightTriangle = Convert.ToDouble(Console.ReadLine());
+				decimal heightTriangle2 = Convert.ToDecimal(Console.ReadLine());
+						float heightTriangle3 = float.Parse(Console.ReadLine());
+		
+		Console.Write("Enter the length for cube : ");
+		double lengthCube = Convert.ToDouble(Console.ReadLine());
+		
+		Console.Write("Enter the width for cube : ");
+		double widthCube = Convert.ToDouble(Console.ReadLine());
+		
+		Console.Write("Enter the height for cube : ");
+		double heightCube = Convert.ToDouble(Console.ReadLine());
+		
+		Console.WriteLine("\n1. Display user details,\n2. Triangle,\n3. Cube\n");
+
+		Console.WriteLine("Select one of the option from above (1-3)\n");
+		
+		string input = Console.ReadLine();
+		
+		if (input == "1")
+		{
+			UserInfo(firstName, lastName, age);
+		}
+		else if (input == "2")
+		{
+			double area = AreaTriangle(lengthBaseTriangle, heightTriangle);
+			Console.WriteLine("\nThe area of the triangle is : " + area);
+				decimal area2 = AreaTriangle(lengthBaseTriangle2, heightTriangle2);
+				Console.WriteLine("\nThe area of the triangle is : " + area2);
+					float area3 = AreaTriangle(lengthBaseTriangle3, heightTriangle3);
+					Console.WriteLine("\nThe area of the triangle is : " + area3);
+			
+		}
+		else if (input == "3")
+		{
+			double cube = VolumeCube(lengthCube, widthCube, heightCube);
+			Console.WriteLine("\nThe volume of the cube is : " + cube);
+		}
+		
+		//UserInfo(firstName, lastName, age);
+		
+		//AreaTriangle(lengthBaseTriangle, heightTriangle);
+		//double area = AreaTriangle(lengthBaseTriangle, heightTriangle);
+		
+		//VolumeCube(lengthCube, widthCube, heightCube);
+		//double cube = VolumeCube(lengthCube, widthCube, heightCube);
+		
+
+	}
+	
+	static void UserInfo(string firstName, string lastName, int age)
+	{
+		//string result;
+		//age = 2021 - birthYear;
+		//result = Console.WriteLine(firstName +" "+ lastName +" "+ age);
+		Console.WriteLine(firstName +" "+ lastName +" "+ age);
+		//return result;
+		
+	}
+	static double AreaTriangle(double lengthBaseTriangle, double heightTriangle)
+	{
+		double result;
+		result = (lengthBaseTriangle * heightTriangle) / 2;
+		return result;
+	}
+		static decimal AreaTriangle(decimal lengthBaseTriangle2, decimal heightTriangle2)
+	{
+		decimal result;
+		result = (lengthBaseTriangle2 * heightTriangle2) / 2;
+		return result;
+	}
+			static float AreaTriangle(float lengthBaseTriangle3, float heightTriangle3)
+	{
+		float result;
+		result = (lengthBaseTriangle3 * heightTriangle3) / 2;
+		return result;
+	}
+	static double VolumeCube(double lengthCube, double widthCube, double heightCube)
+	{
+		double result;
+		result = lengthCube * widthCube * heightCube;
+		return result;
+	}
+
+}
