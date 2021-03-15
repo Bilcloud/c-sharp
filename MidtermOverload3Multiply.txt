@@ -1,0 +1,32 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("First Method Multiply = " + MultiplyNum(1, 2));
+		Console.WriteLine("Second Method Multiply = " + MultiplyNum(1, 2, 3));
+		//Console.Write("Enter the first number : ");
+		//int firstNumber = Convert.ToInt16(Console.ReadLine());
+		//Console.Write("Enter the second number : ");
+		//int secondNumber = Convert.ToInt16(Console.ReadLine());
+		//Console.Write("Enter the third number : ");
+		//int thirdNumber = Convert.ToInt16(Console.ReadLine());
+		//int firstMethod = Add2Num(firstNumber, secondNumber);
+		//Console.WriteLine("First Method : " + firstMethod);
+		//int secondMethod = Add2Num(firstNumber, secondNumber, thirdNumber);
+		//Console.Write("Second Method : " + secondMethod);
+	}
+	static int MultiplyNum(int firstNumber, int secondNumber)
+	{
+		int result;
+		result = firstNumber * secondNumber;
+		return result;
+	}
+	static int MultiplyNum(int firstNumber, int secondNumber, int thirdNumber)
+	{
+		int result;
+		result = firstNumber * secondNumber * thirdNumber;
+		return result;
+	}
+}
