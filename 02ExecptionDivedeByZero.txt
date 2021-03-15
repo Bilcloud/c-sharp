@@ -1,0 +1,21 @@
+using System;
+
+namespace mid
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                int x = 0;
+                int sonuc = 7 / x;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+            }
+            Console.ReadLine();
+        }
+    }
+}
