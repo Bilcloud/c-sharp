@@ -1,0 +1,29 @@
+namespace week6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int first;
+            int second;
+            string strA;
+            string strB;
+            strA = Console.ReadLine();
+            strB = Console.ReadLine();
+            try
+            {
+                first = int.Parse(strA);
+                second = int.Parse(strB);
+                if (first > 10 && second < 100)
+                {
+                    throw new Exception("Expected values <=10 and >=100");
+                }
+            }
+            catch (Exception ex1)
+            {
+                Console.WriteLine(ex1.Message);
+            }
+            Console.ReadLine();
+        }    
+    }
+}
