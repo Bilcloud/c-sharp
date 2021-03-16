@@ -1,0 +1,40 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Enter your mark");
+		int mark = Convert.ToInt32(Console.ReadLine());
+		Console.Write("Your mark is : " + Grade(mark));
+	}
+	static char Grade(int mark)
+	{
+		char result;
+		if (mark >= 90)
+		{
+			result = 'A';
+			return result;
+		}
+		else if (mark >= 80)
+		{
+			result = 'B';
+			return result;
+		}
+		else if (mark >= 70)
+		{
+			result = 'C';
+			return result;
+		}
+		else if (mark >= 60)
+		{
+			result = 'D';
+			return result;
+		}
+		else
+		{
+			result = 'F';
+			return result;
+		}
+	}
+}
