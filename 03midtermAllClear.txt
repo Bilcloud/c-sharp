@@ -1,0 +1,112 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+
+			Console.Write("Enter your first name : ");
+			string firstName = Console.ReadLine();
+
+			Console.Write("Enter your last name : ");
+			string lastName = Console.ReadLine();
+		
+			Console.Write("Enter the first number : ");
+			double firstNumber = Convert.ToDouble(Console.ReadLine());
+		
+			Console.Write("Enter the second number : ");
+			double secondNumber = Convert.ToDouble(Console.ReadLine());
+
+
+			Console.WriteLine("\n\n1. Add both numbers\n2. Multiply both numbers\n3. Divide the second number by the first.\n4. Subtract the first number from the second.\n");
+
+
+			while (true)
+			{
+				Console.WriteLine("\nSelect one of the options from above. \n");
+				string input = Console.ReadLine();
+
+				if (input == "1")
+				{
+					Console.WriteLine("Hello " + firstName + lastName + " your answer is " + Add(firstNumber, secondNumber));
+				}
+				else if (input == "2")
+				{
+					Console.WriteLine("Hello " + firstName + lastName + " your answer is " + Multiply(firstNumber, secondNumber));
+				}
+				else if (input == "3")
+				{
+					Console.WriteLine("Hello " + firstName + lastName + " your answer is " + Divide(firstNumber, secondNumber));
+				}
+				else if (input == "4")
+				{
+					Console.WriteLine("Hello " + firstName + lastName + " your answer is " + Subtract(firstNumber, secondNumber));
+				}
+				else
+				{
+					Console.WriteLine("Invalid entry. Enter a number between 1-3.\n");
+				}
+			}
+		}
+
+		static void UserInfo(string firstName, string lastName, int age)
+		{
+			Console.WriteLine(firstName + " " + lastName + " " + age);
+		}
+		static double Add(double firstNumber, double secondNumber)
+		{
+			double result;
+			result = firstNumber + secondNumber;
+			if (result > 50)
+			{
+				result = (result * 2) - 4;
+			}
+			else if (result < 50 && result > 10)
+			{
+				result = (result * 7) + 2;
+			}
+			return result;
+		}
+		static double Multiply(double firstNumber, double secondNumber)
+		{
+			double result;
+			result = firstNumber * secondNumber;
+			if (result > 50)
+			{
+				result = (result * 2) - 4;
+			}
+			else if (result < 50 && result > 10)
+			{
+				result = (result * 7) + 2;
+			}
+			return result;
+		}
+		static double Divide(double firstNumber, double secondNumber)
+		{
+			double result;
+			result = secondNumber / firstNumber;
+			if (result > 50)
+			{
+				result = (result * 2) - 4;
+			}
+			else if (result < 50 && result > 10)
+			{
+				result = (result * 7) + 2;
+			}
+			return result;
+		}
+		static double Subtract(double firstNumber, double secondNumber)
+		{
+			double result;
+			result = secondNumber - firstNumber;
+			if (result > 50)
+			{
+				result = (result * 2) - 4;
+			}
+			else if (result < 50 && result > 10)
+			{
+				result = (result * 7) + 2;
+			}
+			return result;
+		}
+	}
