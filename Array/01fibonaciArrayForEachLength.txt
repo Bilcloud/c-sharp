@@ -1,0 +1,17 @@
+public class Program
+{
+	public static void Main()
+	{
+		int [] fibonaci = new int [10];
+		fibonaci[0] = 1;
+		fibonaci[1] = 1;
+		for(int i = 2; i < 10; i++)
+		{
+			fibonaci[i] = fibonaci[i - 1] + fibonaci[i - 2];
+		}
+		foreach(int i in fibonaci)
+		{
+			Console.WriteLine(" " + i);
+		}
+	}
+}
