@@ -1,0 +1,10 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[] days = new string[7] {"Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday", "Sunday"};
+		Console.WriteLine(days[1]);
+	}
+}
