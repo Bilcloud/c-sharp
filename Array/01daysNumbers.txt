@@ -1,0 +1,11 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string[] numberDays = new string[7] {"1", "2", "3", "4", "5", "6", "7"};
+		string[] days = new string[7] {"Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "Saturday", "Sunday"};
+		Console.WriteLine("{0} day of the week is {1} ", numberDays[0], days[0]);
+	}
+}
