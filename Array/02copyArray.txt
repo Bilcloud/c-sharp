@@ -1,0 +1,16 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int[] array9 = new int[4] { 2, 0, 0, 0 };
+		int[] array10 = array9;
+
+		array9[0] = -1;
+		array10[0] = -2;
+
+		Console.WriteLine(array9[0]);
+		Console.WriteLine(array10[0]);
+	}
+}

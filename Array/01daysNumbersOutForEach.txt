@@ -1,0 +1,14 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int[] array5 = {1, 2, 3, 4};
+		foreach (int i in array5)
+		{
+			Console.WriteLine(i);
+		}
+		
+	}
+}
