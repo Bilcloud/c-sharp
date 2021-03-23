@@ -1,0 +1,77 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+			Console.WriteLine("Welcome to our Ultimate Cinema Menu");
+			Console.WriteLine("We are a online Ultimate Cinema presently showing:\n");
+			string[] filmNumber1 = new string[5] { "1.", "2.", "3.", "4.", "5." };
+			string[] filmNames = new string[5] { " A Bad Moms Christmas ", " Blade Runner 2049 ", " Thor: Ragnarok ", " Murder on the Orient Express ", " Star Wars The Last Jedi " };
+            string[] ageFilm = new string[5] { "(15)", "(15)", "(12)", "(18)", "(13)" };
+            for (int i = 0; i<filmNames.Length; i++)
+            {
+                Console.WriteLine(filmNumber1[i] + filmNames[i] + " " + ageFilm[i]);
+            }
+
+			Console.Write("\nEnter the name of film number : ");
+			string filmNumber = Console.ReadLine();
+
+			//Console.Write("Enter your age : ");
+			//string age = Console.ReadLine();
+			if (filmNumber == "1")
+			{
+					Console.WriteLine("Enter your age :");
+					int age = Convert.ToInt32(Console.ReadLine());
+					if (age < 15)
+					{
+						Console.WriteLine("Access denied – you are too young");
+					}
+					Console.WriteLine("Enjoy the film");
+			}
+			else if (filmNumber == "2")
+			{
+					Console.WriteLine("Enter your age :");
+					int age = Convert.ToInt32(Console.ReadLine());
+					if (age < 15)
+					{
+						Console.WriteLine("Access denied – you are too young");
+					}
+					Console.WriteLine("Enjoy the film");
+			}
+			else if (filmNumber == "3")
+			{
+					Console.WriteLine("Enter your age :");
+					int age = Convert.ToInt32(Console.ReadLine());
+					if (age < 12)
+					{
+						Console.WriteLine("Access denied – you are too young");
+					}
+					Console.WriteLine("Enjoy the film");
+			}
+			else if (filmNumber == "4")
+			{
+					Console.WriteLine("Enter your age :");
+					int age = Convert.ToInt32(Console.ReadLine());
+					if (age < 18)
+					{
+						Console.WriteLine("Access denied – you are too young");
+					}
+					Console.WriteLine("Enjoy the film");
+			}
+			else if (filmNumber == "5")
+			{
+					Console.WriteLine("Enter your age :");
+					int age = Convert.ToInt32(Console.ReadLine());
+					if (age < 13)
+					{
+						Console.WriteLine("Access denied – you are too young");
+					}
+					Console.WriteLine("Enjoy the film");
+			}
+			else
+				{
+					Console.WriteLine("Invalid entry. Enter a number between 1-5.\n");
+				}
+	}
+}

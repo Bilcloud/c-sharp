@@ -1,0 +1,14 @@
+Console.WriteLine("Welcome to our Ultimate Cinema Menu");
+Console.WriteLine("We are a online Ultimate Cinema presently showing:\n");
+string[] filmNames = new string[5] { "1. A Bad Moms Christma s", "2. Blade Runner 2049 ", "3. Thor: Ragnarok ", "4. Murder on the Orient Express ", "5. Star Wars The Last Jedi " };
+string[] ageFilm = new string[5] { "(15)", "(15)", "(12)", "(18)", "(13)" };
+            for (int i = 0; i<5; i++)
+            {
+                Console.WriteLine(filmNames[i] + " " + ageFilm[i]);
+            }
+
+	Console.Write("\nEnter the name of film number : ");
+	string film = Console.ReadLine();
+
+	Console.Write("Enter your age : ");
+	string age = Console.ReadLine();

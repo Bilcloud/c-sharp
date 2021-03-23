@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+
+namespace week10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //int[] array1D = new int[] { 4, 7, 9, 15, 10 };
+            //int maxInteger = array1D.Max();
+            //Console.WriteLine("Maximum integer value of this array is: " + maxInteger);
+            //Console.ReadLine();
+            int[] numbers = new int[] { 45, 67, 23, 45, 19, 85, 64 };
+            int smallest = numbers[0];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] < smallest) smallest = numbers[i];
+            }
+            Console.WriteLine(smallest);
+            Console.ReadLine();
+        }
+    }
+}
