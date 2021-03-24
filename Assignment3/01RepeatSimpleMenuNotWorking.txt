@@ -1,0 +1,23 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string input = " ";
+		do
+		{
+		Console.WriteLine("\na. Option 1 \nb. Option 2 \nc. Option 3 \n");
+		Console.WriteLine("\nSelect one of the options from above. \n");
+		string input2 = Console.ReadLine();	
+		}
+		while (input != "a" || input != "b" || input != "c");
+		
+		//while (input != "a" || input != "b" || input != "c");
+		//Console.WriteLine("\na. Option 1 \nb. Option 2 \nc. Option 3 \n");
+		//Console.WriteLine("\nSelect one of the options from above. \n");
+		//string input = Console.ReadLine();
+		
+		//if (input != "a" || input != "b" || input != "c");
+	}
+}

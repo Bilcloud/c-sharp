@@ -1,23 +1,29 @@
 using System;
-					
-public class Program
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
 {
-	public static void Main()
-	{
-		string input = " ";
-		do
-		{
-		Console.WriteLine("\na. Option 1 \nb. Option 2 \nc. Option 3 \n");
-		Console.WriteLine("\nSelect one of the options from above. \n");
-		string input2 = Console.ReadLine();	
-		}
-		while (input != "a" || input != "b" || input != "c");
-		
-		//while (input != "a" || input != "b" || input != "c");
-		//Console.WriteLine("\na. Option 1 \nb. Option 2 \nc. Option 3 \n");
-		//Console.WriteLine("\nSelect one of the options from above. \n");
-		//string input = Console.ReadLine();
-		
-		//if (input != "a" || input != "b" || input != "c");
-	}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //int num;
+            string userChoice;
+            do
+            {
+                //Console.WriteLine("Select the number of your choice: ");
+                Console.WriteLine("1: Option 1");
+                Console.WriteLine("2: Option 2");
+                Console.WriteLine("3: Option 3");
+                //Console.WriteLine("4: Save games");
+                //Console.WriteLine("5: Read games from file");
+                //Console.WriteLine("6: Quit");
+                Console.Write("Enter the number of your choice: ");
+                userChoice = Console.ReadLine();
+            } while (Int32.Parse(userChoice) != 1 || Int32.Parse(userChoice) != 2 || Int32.Parse(userChoice) != 3);
+        }
+    }
 }

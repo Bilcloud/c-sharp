@@ -1,0 +1,37 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string end = "END";
+		string choice = "";
+		string choice2 = " ";
+	
+		while(choice != end || choice2 != end)
+		{
+			Console.Write("Enter your first number : ");
+			choice = Console.ReadLine();
+			//int firstNumber = Convert.ToInt32(choice);
+			//double firstNumber = Convert.ToDouble(Console.ReadLine());
+			double firstNumber = Convert.ToDouble(choice);
+			
+			Console.Write("Enter your second number : ");
+			choice2 = Console.ReadLine();
+			double secondNumber = Convert.ToDouble(choice2);
+			//int secondNumber = Convert.ToInt32(choice2);
+			//int result = firstNumber / secondNumber;
+			//Console.WriteLine(result);
+								double area = Division(firstNumber, secondNumber);
+								Console.WriteLine("The result of the division is : " + area + "\n");
+		}
+		Console.Write("Bye bye : ");
+	}
+				static double Division(double firstNumber, double secondNumber)
+		{
+			double result;
+			result = firstNumber / secondNumber;
+			return result;
+		}
+	
+}
