@@ -1,0 +1,105 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int index = 1;
+			char userChoice;
+			do
+			{
+				Console.WriteLine("Select one of  the mathematical option below (a, b, c): ");
+				Console.WriteLine("a. Calculate working percentage ");
+				Console.WriteLine("b. Multiply");
+				Console.WriteLine("c. Add\n");
+
+				try
+				{
+				userChoice = Convert.ToChar(Console.ReadLine());
+				
+				//if (userChoice != 'a')// || userChoice != 'b' || userChoice != 'c') 
+				//if (userChoice != a || userChoice != b || userChoice != c)
+				//{
+				//		throw new Exception("Your selection should be (a, b or c)");
+				//}
+				//else if( userChoice != 'b') // || userChoice != 'c') 
+				//{
+				//	throw new Exception("Your selection should be (a, b or c)");
+				//}
+				//else if(userChoice != 'c')
+                //{
+				//	throw new Exception("Your selection should be (a, b or c)");
+                //}
+                //else {
+
+				Console.Write("Enter the first number : ");
+				double firstNumber = Convert.ToDouble(Console.ReadLine());
+				Console.Write("Enter the second number : ");
+				double secondNumber = Convert.ToDouble(Console.ReadLine());
+				Console.Write("Enter the third number : ");
+				double thirdNumber = Convert.ToDouble(Console.ReadLine());
+
+				switch (userChoice)
+				{
+
+					case 'a':
+                        
+						double result = (firstNumber / secondNumber) * 100;
+						if (secondNumber == 0)
+								{
+									throw new Exception("Cannot divide by zero");
+								}
+
+								Console.WriteLine("\nWorking percentage is : " + result);
+						break;
+						
+					case 'b':
+						result = firstNumber * secondNumber * thirdNumber;
+						Console.WriteLine("\nMultiplication result is : " + result);
+						break;
+
+					case 'c':
+						result = firstNumber + secondNumber + thirdNumber;
+						Console.WriteLine("\nSum of the number is : " + result);
+						break;
+
+					default:
+						Console.WriteLine("\nInvalid option entered ");
+						break;
+				}
+									}
+				//}
+				catch (DivideByZeroException ex)
+				{
+					Console.WriteLine(ex.Message);
+				}
+				catch (FormatException ex2)
+				{
+					Console.WriteLine(ex2.Message);
+				}
+				catch (Exception ex3)
+				{
+					Console.WriteLine(ex3.Message);
+				}
+				//finally
+				//{
+				//	Console.WriteLine("finally");
+				//}
+				Console.ReadLine();
+				{
+					Environment.Exit(0);
+				}
+				index++;
+			} while (index < 1);
+		}
+	}
+}
+
+
+
