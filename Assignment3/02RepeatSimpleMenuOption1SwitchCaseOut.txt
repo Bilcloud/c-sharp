@@ -16,53 +16,78 @@ namespace ConsoleApp1
 			{
 				//int userChoice = 0;
 				//Console.WriteLine("Select the number of your choice: ");
-				Console.WriteLine("1: Option 1");
-				Console.WriteLine("2: Option 2");
-				Console.WriteLine("3: Option 3");
+				Console.WriteLine("1. Option 1");
+				Console.WriteLine("2. Option 2");
+				Console.WriteLine("3. Option 3");
 				//Console.WriteLine("4: Save games");
 				//Console.WriteLine("5: Read games from file");
 				//Console.WriteLine("6: Quit");
-				Console.Write("Enter the number of your choice: ");
+				Console.Write("Enter the number of Option you choose (1, 2, 3): ");
 				userChoice = int.Parse(Console.ReadLine());
+				switch (userChoice)
+				{
+					case 1:
+						int result = 1;
+						for (int i = 0; i < 25; i++)
+						{
+							if (i % 2 == 0)
+							{
+								result = i * 4;
+								Console.WriteLine(result);
+							}
+							else if (i == 3 || i == 11 || i == 21)
+							{
+								result = result - 3;
+								Console.WriteLine(result);
+							}
+							else
+							{
+								result = i + 7;
+								Console.WriteLine(result);
+							}
+						}
+						break;
+					case 2:
+						int s1, s2;
+						char opt, devam;
+						do
+						{
+							Console.Write("Sayı 1 girin:");
+							s1 = Convert.ToInt32(Console.ReadLine());
+							Console.Write("Sayı 1 girin:");
+							s2 = Convert.ToInt32(Console.ReadLine());
+							Console.Write("İşlem Seçin(+,-,*,/):");
+							opt = Convert.ToChar(Console.ReadLine());
+							switch (opt)
+							{
+								case '+': Console.WriteLine("İşlem Sonucu:{0}", s1 + s2); break;
+								case '-': Console.WriteLine("İşlem Sonucu:{0}", s1 - s2); break;
+								case '*': Console.WriteLine("İşlem Sonucu:{0}", s1 * s2); break;
+								case '/': Console.WriteLine("İşlem Sonucu:{0}", s1 / s2); break;
+								default: Console.WriteLine("Hatalı işlem"); break;
+							}
+							Console.Write("Devam için E/e");
+							devam = Convert.ToChar(Console.ReadLine());
+
+						} while (devam == 'E' || devam == 'e');
+						break;
+					case 3:
+						Console.Write("Thank you");
+						Console.ReadLine();
+						{
+							Environment.Exit(0);
+						}
+						break;
+					default:
+						Console.WriteLine("Invalid option entered \n"); break;
+
+				}
 				//int userChoice = Console.ReadLine();
 				//int userChoice2 = Convert.ToInt32(Console.ReadLine());
 				//} while (Int32.Parse(userChoice) != 1 || Int32.Parse(userChoice) != 2 || Int32.Parse(userChoice) != 3);
 			} while (userChoice != 1);// || userChoice != 2 || userChoice != 3);
 			//while (userChoice == 1 || userChoice == 2 || userChoice == 3);
-									 //userChoice = Console.ReadLine();
-			switch (userChoice)
-			{
-				case 1:
-					int result = 1;
-					for (int i = 0; i < 25; i++)
-					{
-						if (i % 2 == 0)
-						{
-							result = i * 4;
-							Console.WriteLine(result);
-						}
-						else if (i == 3 || i == 11 || i == 21)
-						{
-							result = result - 3;
-							Console.WriteLine(result);
-						}
-						else
-						{
-							result = i + 7;
-							Console.WriteLine(result);
-						}
-					}
-					break;
-				case 2:
-					int son = 1;
-					son = son + 2;
-					Console.WriteLine(son);
-					break;
-
-
-
-
-			}
+									 //userChoice = Console.ReadLine();	
 			Console.ReadLine();
 		}
 		}

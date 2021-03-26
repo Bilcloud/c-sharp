@@ -1,0 +1,45 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string bitti = "END";
+		string firstNumber = "";
+		string secondNumber = "";
+		double result = 0;
+	
+		//while(choice != end || choice2 != end)
+		while(firstNumber != bitti && secondNumber != bitti)
+		{
+			Console.Write("Enter your first number : ");
+			firstNumber = Console.ReadLine();
+			//int firstNumber = Convert.ToInt32(choice);
+			//double firstNumber = Convert.ToDouble(Console.ReadLine());
+			//double firstNumber = Convert.ToDouble(choice);
+			
+			Console.Write("Enter your second number : ");
+			secondNumber = Console.ReadLine();
+			//double secondNumber = Convert.ToDouble(choice2);
+			//int secondNumber = Convert.ToInt32(choice2);
+			//int result = firstNumber / secondNumber;
+			//Console.WriteLine(result);
+								//double area = Division(firstNumber, secondNumber);
+								//Console.WriteLine("The result of the division is : " + area + "\n");
+					double firstNumber2 = double.Parse(firstNumber);
+		double secondNumber2 = double.Parse(firstNumber);
+			double result2 = Division(firstNumber2, secondNumber2);
+		//result = firstNumber2 / secondNumber2;
+		Console.WriteLine("The result of the division is : " + result2 + "\n");
+		}
+		
+		//Console.Write("Bye bye : ");
+	}
+				static double Division(double firstNumber2, double secondNumber2)
+		{
+			double result;
+			result = firstNumber2 / secondNumber2;
+			return result;
+		}
+	
+}

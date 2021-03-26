@@ -1,0 +1,128 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        static void Main(string[] args)
+		{
+
+			Console.Write("Enter your first name : ");
+			string firstName = Console.ReadLine();
+
+			Console.Write("Enter your last name : ");
+			string lastName = Console.ReadLine();
+
+			Console.Write("Enter your year of birth : ");
+			int birthYear = Convert.ToInt32(Console.ReadLine());
+
+
+			Console.Write("Enter the length of the base of triangle : ");
+			double lengthBaseTriangle = Convert.ToDouble(Console.ReadLine());
+			//	decimal lengthBaseTriangle2 = Convert.ToDecimal(Console.ReadLine());
+			//		float lengthBaseTriangle3 = float.Parse(Console.ReadLine());
+
+			Console.Write("Enter the height of triangle : ");
+			double heightTriangle = Convert.ToDouble(Console.ReadLine());
+			//		decimal heightTriangle2 = Convert.ToDecimal(Console.ReadLine());
+			//				float heightTriangle3 = float.Parse(Console.ReadLine());
+
+			Console.Write("Enter the length for cube : ");
+			double lengthCube = Convert.ToDouble(Console.ReadLine());
+
+			Console.Write("Enter the width for cube : ");
+			double widthCube = Convert.ToDouble(Console.ReadLine());
+
+			Console.Write("Enter the height for cube : ");
+			double heightCube = Convert.ToDouble(Console.ReadLine());
+
+			Console.WriteLine("\n\n1. Display user details,\n2. Triangle,\n3. Cube\n");
+
+
+			while (true)
+			{
+				Console.WriteLine("\nSelect one of the options from above. \n");
+				string input = Console.ReadLine();
+
+				if (input == "1")
+				{
+					Console.WriteLine("The user informations are :");
+					DateTime today = DateTime.Today;
+					int age = today.Year - birthYear;
+					UserInfo(firstName, lastName, age);
+				}
+				else if (input == "2")
+				{
+					double area = AreaTriangle(lengthBaseTriangle, heightTriangle);
+					Console.WriteLine("The area of the triangle is : " + area + "\n");
+					//	decimal area2 = AreaTriangle(lengthBaseTriangle2, heightTriangle2);
+					//	Console.WriteLine("\nThe area of the triangle is : " + area2);
+					//		float area3 = AreaTriangle(lengthBaseTriangle3, heightTriangle3);
+					//		Console.WriteLine("\nThe area of the triangle is : " + area3);
+
+				}
+				else if (input == "3")
+				{
+					double cube = VolumeCube(lengthCube, widthCube, heightCube);
+					Console.WriteLine("The volume of the cube is : " + cube + "\n");
+				}
+				else
+				{
+					Console.WriteLine("Invalid entry. Enter a number between 1-3.\n");
+				}
+
+
+			}
+			//UserInfo(firstName, lastName, age);
+
+			//AreaTriangle(lengthBaseTriangle, heightTriangle);
+			//double area = AreaTriangle(lengthBaseTriangle, heightTriangle);
+
+			//VolumeCube(lengthCube, widthCube, heightCube);
+			//double cube = VolumeCube(lengthCube, widthCube, heightCube);
+
+
+		}
+
+		static void UserInfo(string firstName, string lastName, int age)
+		{
+			Console.WriteLine(firstName + " " + lastName + " " + age);
+		}
+		static double AreaTriangle(double lengthBaseTriangle, double heightTriangle)
+		{
+			double result;
+			result = (lengthBaseTriangle * heightTriangle) / 2;
+			return result;
+		}
+		static void AreaTriangle(double lengthBaseTriangle, double heightTriangle, out double result)
+		{
+			result = (lengthBaseTriangle * heightTriangle) / 2;
+		}
+		static void AreaTriangle(decimal lengthBaseTriangle, decimal heightTriangle, out decimal result)
+		{
+			result = (lengthBaseTriangle * heightTriangle) / 2;
+		}
+		static decimal AreaTriangle(decimal lengthBaseTriangle2, decimal heightTriangle2)
+		{
+			decimal result;
+			result = (lengthBaseTriangle2 * heightTriangle2) / 2;
+			return result;
+		}
+		static float AreaTriangle(float lengthBaseTriangle3, float heightTriangle3)
+		{
+			float result;
+			result = (lengthBaseTriangle3 * heightTriangle3) / 2;
+			return result;
+		}
+		static double VolumeCube(double lengthCube, double widthCube, double heightCube)
+		{
+			double result;
+			result = lengthCube * widthCube * heightCube;
+			return result;
+		}
+	}
+}
