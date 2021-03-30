@@ -1,0 +1,68 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Please enter four strings");
+		string first = Console.ReadLine();
+		string second = Console.ReadLine();
+		string third = Console.ReadLine();
+		string forth = Console.ReadLine();
+		
+		int digitsCount = 0;
+		foreach(char c in first)
+		{
+  		if(Char.IsDigit(c))
+    	digitsCount++;
+		}
+		
+		int lettersCount = 0;
+		foreach(char c in first)
+		{
+  		if(Char.IsLetter(c))
+    	lettersCount++;
+		}
+		
+		int whiteSpaceCount = 0;
+		foreach(char c in first)
+		{
+  		if(Char.IsWhiteSpace(c))
+    	whiteSpaceCount++;
+		}
+		Console.WriteLine("The First string has "+ digitsCount + " numeric numbers, " + whiteSpaceCount + " white spaces and " + lettersCount + " letters.");
+		
+		int N = second.Length;
+		
+		string thirdLast = third.Insert(4, "my inserted string");
+		Console.WriteLine("Third string: " + thirdLast);
+		
+		string forthLast = forth.Remove(10, 5);
+		Console.WriteLine("The Fourth string: " + forthLast);
+		
+		string sentenceSample = "Happiness can be found even in the darkest of times, if one only remembers to turn on the light.";
+		char[] delim = {' '};
+		string[] splitArray = sentenceSample.Split(delim);
+		//var longest = splitArray.Where(s => s.Length == splitArray.Max(m => m.Length)).First();
+		//string longest = strings.OrderByDescending( s => s.Length ).First();
+		//int longestLength = splitArray.Max(w => w.Length);
+		//for (int i = 0; i < splitArray.Length; i++)
+		//{
+		//	Console.WriteLine(splitArray[i]);
+		//}
+ 
+		 //cout << conVowUpp(str);
+		//string conVowUpp(string str);
+		//{
+   // for (int i = 0; i < N; i++) {
+        //if (second[i] == 'a' || second[i] == 'e'
+           // || second[i] == 'i' || second[i] == 'o'
+           // || second[i] == 'u') {
+           // second[i] = second[i] - 'a' + 'A';
+        //}
+    //}
+    //return second;
+		//}
+
+	}
+}

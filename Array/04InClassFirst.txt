@@ -1,0 +1,42 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Please enter four strings");
+		string first = Console.ReadLine();
+		string second = Console.ReadLine();
+		string third = Console.ReadLine();
+		string forth = Console.ReadLine();
+		
+		 //if (char.IsDigit(first[])) 
+ 			//{
+				// Console.WriteLine("True");
+ 			//}
+		int digitsCount = 0;
+		foreach(char c in first)
+		{
+  		if(Char.IsDigit(c))
+    	digitsCount++;
+		}
+		Console.WriteLine("Number of numeric digits: " + digitsCount);
+		
+		int lettersCount = 0;
+		foreach(char c in first)
+		{
+  		if(Char.IsLetter(c))
+    	lettersCount++;
+		}
+		Console.WriteLine("Number of letters: " + lettersCount);
+		
+		int whiteSpaceCount = 0;
+		foreach(char c in first)
+		{
+  		if(Char.IsWhiteSpace(c))
+    	whiteSpaceCount++;
+		}
+		Console.WriteLine("Number of white spaces: " + whiteSpaceCount);
+
+	}
+}
