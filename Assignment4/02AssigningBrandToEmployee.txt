@@ -1,0 +1,17 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		String[,] employeeBrand = new String[4,3];
+		for(int i = 0; i < 4; i++)
+		{
+  			for(int y = 0; y < 3; y++)
+  			{
+				Console.WriteLine("Enter Employee Name: ");
+    			employeeBrand[i,y] = Console.ReadLine();
+			}
+		}
+	}
+}	
