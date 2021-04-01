@@ -1,0 +1,21 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int index = 1;
+		string[] employee = new string[4] { " Liz StaceyBA ", " Orville BaileyBA ", " Mark RajkumarBA ", " Jim EdwardsBA " };
+		do
+		{
+			Console.WriteLine("MENU: ");
+			Console.WriteLine("A. To assign a new vehicle to a employee ");
+			Console.WriteLine("B. Edit existing employee vehicle assignment ");
+			Console.WriteLine("C. List all vehicle assignments ");
+			Console.WriteLine("D. Delete registration Information");
+			Console.WriteLine("E. Exit the program");
+			Console.WriteLine("Please select one from above (A, B, C or D) ");
+		index++;
+		} while (index < 1);
+	}
+}
