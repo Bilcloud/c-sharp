@@ -9,6 +9,7 @@ public class Program
 		do
 		{
 			Console.WriteLine("MENU: ");
+			Console.WriteLine("------------------------------------------");
 			Console.WriteLine("A. To assign a new vehicle to a employee ");
 			Console.WriteLine("B. Edit existing employee vehicle assignment ");
 			Console.WriteLine("C. List all vehicle assignments ");

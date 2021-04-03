@@ -1,0 +1,27 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string userInput = " ";
+		string[] employee = new string[4] { " Liz StaceyBA ", " Orville BaileyBA ", " Mark RajkumarBA ", " Jim EdwardsBA " };
+		do
+		{
+  		userInput = DisplayMenu();
+		}while(userInput != "E");
+	}
+	static public string DisplayMenu()
+	{   
+		Console.WriteLine("MENU: ");
+		Console.WriteLine("------------------------------------------");
+		Console.WriteLine("A. To assign a new vehicle to a employee ");
+		Console.WriteLine("B. Edit existing employee vehicle assignment ");
+		Console.WriteLine("C. List all vehicle assignments ");
+		Console.WriteLine("D. Delete registration Information");
+		Console.WriteLine("E. Exit the program");
+		Console.WriteLine("Please select one from above (A, B, C, D or E) ");
+  	var result = Console.ReadLine();
+  	return result;
+	}
+}

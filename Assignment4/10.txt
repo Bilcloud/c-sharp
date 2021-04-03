@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ass4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[,] employeeBrand = new string[12, 2];
+            for (int i = 0; i < 12; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    if (j == 0)
+                    {
+                        Console.WriteLine("Enter Employee Name: ");
+                        employeeBrand[i, j] = Console.ReadLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter Brand Number: ");
+                        employeeBrand[i, j] = Console.ReadLine();
+                    }
+                    string input=" ";
+                    bool duplicateAttempt = false;
+                    do
+                    {
+                        duplicateAttempt = employeeBrand[i, j].Contains(input);
+                        if (duplicateAttempt)
+                            Console.WriteLine("exists");
+                    }
+                    while (duplicateAttempt);
+                    employeeBrand[i, j] = input;
+                    Console.WriteLine("new");
+                }
+            }
+        }
+    }
+}
