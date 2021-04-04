@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            try
+            {
+                bool isContinue = true;
+                string[] employeeName = new string[12] { "Liz StaceyBA", "Orville BaileyBA", "Mark RajkumarBA", "Jim EdwardsBA", "-", "-", "-", "-", "-", "-", "-", "-" };
+                string[] brandNumber = new string[12] { "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-" };
+                bool isCorrectNumber;
+
+                do
+                {
+                    Console.WriteLine("MENU: ");
+                    Console.WriteLine("------------------------------------------");
+                    Console.WriteLine("A. To assign a new vehicle to a employee ");
+                    Console.WriteLine("B. Edit existing employee vehicle assignment ");
+                    Console.WriteLine("C. List all vehicle assignments ");
+                    Console.WriteLine("D. Delete registration Information");
+                    Console.WriteLine("E. Exit the program");
+                    Console.WriteLine("Please select one option from above (A, B, C, D or E) ");
+                    string strAnswer = Console.ReadLine();
+
+
+
+
+                    //show the movie list for selecting
+                    for (int i = 0; i < employeeName.Length; i++)
+                    {
+                        Console.WriteLine((i + 1) + ". " + employeeName[i] + " - " + brandNumber[i]);
+                    }
+
+                    do
+                    {
+                        isCorrectNumber = true;
+                        Console.Write("\nSelect a row number to assign a new vehicle to employee (1-12) ");
+                        string strSelectNum = Console.ReadLine();
+                        for (int i = 0; i < strSelectNum.Length; i++)
+                        {
+                            if (!char.IsDigit(strSelectNum[i]))
+                            {
+                                Console.WriteLine(" Your input is not numeric ");
+                                isCorrectNumber = false;
+                                break;
+                            }
+                        }
+                        if (isCorrectNumber)
+                        {
+                            if (int.Parse(strSelectNum) > employeeName.Length)
+                            {
+                                Console.WriteLine(" Please re-enter a number between 1-12 ");
+                                isCorrectNumber = false;
+                            }
+                            else
+                            {
+                                Console.Write("Enter the Employee Name : ");
+                                //replace new movie name
+                                employeeName[int.Parse(strSelectNum) - 1] = Console.ReadLine();
+                                Console.Write("Enter the Brand Number : ");
+                                string newCost = Console.ReadLine();
+                                //check for cost
+                                for (int i = 0; i < newCost.Length; i++)
+                                {
+                                    if (!char.IsDigit(newCost[i]))
+                                    {
+                                        Console.WriteLine(" This is not numberic numbers. ");
+                                        isCorrectNumber = false;
+                                        break;
+                                    }
+                                }
+                                //replace new cost
+                                brandNumber[int.Parse(strSelectNum) - 1] = newCost;
+                            }
+                        }
+
+                    } while (!isCorrectNumber);
+                    
+                } while (isContinue);
+
+
+
+                Console.ReadLine();
+
+
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Format Exception Occured");
+                Console.ReadLine();
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("OverFlow Exception Occured");
+                Console.ReadLine();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("Index out of Range Exception Occured");
+                Console.ReadLine();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Unexpected Exception Occured");
+                Console.ReadLine();
+            }
+        }
+    }
+}
