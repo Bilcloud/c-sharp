@@ -1,0 +1,89 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool loop = true;
+            //string[] employeeName = new string[12] { "Liz StaceyBA", "Orville BaileyBA", "Mark RajkumarBA", "Jim EdwardsBA", "-", "-", "-", "-", "-", "-", "-", "-" };
+            string[] employeeName = new string[12];
+            int[] brandNumberInt = new int[12];
+            bool isCorrectNumber;
+
+            do
+            {
+                Console.WriteLine("\nMENU: ");
+                Console.WriteLine("------------------------------------------");
+                Console.WriteLine("A. To assign a new vehicle to a employee ");
+                Console.WriteLine("B. Edit existing employee vehicle assignment ");
+                Console.WriteLine("C. List all vehicle assignments ");
+                Console.WriteLine("D. Delete registration Information");
+                Console.WriteLine("E. Exit the program");
+                Console.WriteLine("\nPlease select one option from above (A, B, C, D or E) ");
+                string option = Console.ReadLine();
+
+                switch (option)
+                {
+                    case "A":     
+                        for (int i = 0; i < employeeName.Length; i++)
+                        {
+                                Console.Write("\nEnter the Employee Name : ");
+                                employeeName[i] = Console.ReadLine();
+                                if (employeeName[i] != "DONE")
+                                {
+                                    Console.Write("Enter the Brand Number : ");
+                                    brandNumberInt[i] = int.Parse(Console.ReadLine());
+                                    Console.WriteLine("Your record has been saved");
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                                if (brandNumberInt[i] < 1 || brandNumberInt[i] > 4)
+                                {
+                                    throw new Exception("Error! Input should (1-4)");
+                                }
+                        }        
+                        break;
+                    case "B":
+                        for (int i = 0; i < employeeName.Length; i++)
+                        {
+                            Console.WriteLine((i + 1) + ". " + employeeName[i] + " - " + brandNumberInt[i]);
+                        }
+                        
+                            isCorrectNumber = true;
+                            Console.Write("\nSelect a row number to update information (1-12) ");
+                            string strSelectNum = Console.ReadLine();
+                            Console.Write("Enter the Employee Name : ");
+                            //replace new movie name
+                            employeeName[int.Parse(strSelectNum) - 1] = Console.ReadLine();
+                            Console.Write("Enter the Brand Number : ");
+                            int brandNew = int.Parse(Console.ReadLine());
+                            brandNumberInt[int.Parse(strSelectNum) - 1] = brandNew;
+                            Console.Write("The record is updated");
+                        break;
+                    case "C":
+                        for (int i = 0; i < employeeName.Length; i++)
+                        {
+                            Console.WriteLine(employeeName[i] + " - " + brandNumberInt[i]);
+                        }
+                        Console.Write("Please press Enter to return Main Menu");
+                        break;
+                    case "E":
+                        loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("You entered invalid choice, please try again(A-D).\n");
+                        break;
+                }
+            } while (loop);
+            Console.ReadLine();
+        }
+    }
+}
