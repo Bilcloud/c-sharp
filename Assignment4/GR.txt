@@ -1,26 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assignment4
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-            try
+﻿            try
             {
                 bool isContinue = true;
                 string[] sMovieName = new string[10] { "movie1", "movie2", "movie3", "movie4", "movie5", "movie6", "movie7", "movie8", "movie9", "movie10" };
                 string[] sMoviePrice = new string[10] { "1","2","3","4","5","6","7","8","9","10" };
                 int visaInt = 0, tuitionInt = 0;
                 string selectMovie = "";
-
-                
-
                 do
                 {
                     Console.WriteLine("\n Please Choose from the Following Menu items :");
@@ -34,8 +18,6 @@ namespace Assignment4
                     Console.WriteLine(" 7. Exit");
                     Console.WriteLine("---------------------------------------------");
                     string strAnswer = Console.ReadLine();
-
-
                     switch (strAnswer)
                     {
                         //Add All Movie
@@ -46,7 +28,6 @@ namespace Assignment4
                                 Console.WriteLine("{0}. Movie Name is " + sMovieName[i], i + 1);
                             }
                             break;
-
                         //Add All Cost
                         case "2":
                             Console.WriteLine("\n 2. All Movie Cost");
@@ -56,9 +37,7 @@ namespace Assignment4
                             }
                             Console.ReadKey();
                             break;
-
                         case "3":
-                           
                             //check for selected number
                             if (sMovieName.Length != sMoviePrice.Length)
                             {
@@ -76,22 +55,16 @@ namespace Assignment4
                             }
                             else
                             {
-
                                 //Show the movie and cost list
                                 for (int i = 0; i < sMovieName.Length; i++)
                                 {
-
                                     Console.WriteLine((i + 1)+" . " + sMovieName[i] + " : $" + sMoviePrice[i] );
-
                                 }
-                                
                                 Console.Write("Select the Movie Number:");
                                 int intChooseMovieNum = 0;
                                 string inputPay = "";
                                 string strPay = "";
                                 bool isCorrectInput = false;
-
-
                                 do
                                 {
                                     intChooseMovieNum = int.Parse(Console.ReadLine());
@@ -105,7 +78,6 @@ namespace Assignment4
                                     {
                                         //Selected movie name list
                                         selectMovie = selectMovie + "," + sMovieName[intChooseMovieNum - 1];
-
                                         Console.WriteLine("What do you use to pay a tution or a visa? (1. tuition, 2. visa)");
                                         inputPay = Console.ReadLine();
                                         //Tuition
@@ -123,17 +95,14 @@ namespace Assignment4
                                             //add visa fee
                                             visaInt += int.Parse(sMoviePrice[intChooseMovieNum - 1]);
                                             isCorrectInput = true;
-
                                         }
                                         //wrong input
                                         else
                                         {
                                             Console.Write("Enter 1 or 2 (1. tuition, 2. visa) :");
-
                                             isCorrectInput = false;
                                         }
                                     }
-
                                 } while (!isCorrectInput);
                                 //for confirmation -> ex. You have chosen to rent "Star Wars" ( $10 ) with visa.
                                 Console.WriteLine("Your Movie \"" + sMovieName[intChooseMovieNum - 1] + ":$" + sMoviePrice[intChooseMovieNum - 1]  + strPay + ".\n\n");
@@ -144,9 +113,7 @@ namespace Assignment4
                             //show the movie list for selecting
                             for (int i = 0; i < sMovieName.Length; i++)
                             {
-
                                 Console.WriteLine(" No." + (i + 1) + " Name : " + sMovieName[i] + " ( $" + sMoviePrice[i] + " )");
-
                             }
                             Console.Write("Select Movie Number to delete : ");
                             int inputDeleteNo = int.Parse(Console.ReadLine());
@@ -163,33 +130,25 @@ namespace Assignment4
                                 //var result = arrMovieName.Except(arrAltName);
                                 for (int i = 0; i < inputDeleteNo - 1; i++)
                                 {
-
                                     arrAltName[i] = sMovieName[i];
                                     arrAltCost[i] = sMoviePrice[i];
                                 }
-
                                 for (int j = inputDeleteNo; j < sMovieName.Length; j++)
                                 {
                                     arrAltName[j - 1] = sMovieName[j];
                                     arrAltCost[j - 1] = sMoviePrice[j];
-
                                 }
                                 Console.WriteLine("\n The Movie " + sMovieName[inputDeleteNo] + " ( $" + sMoviePrice[inputDeleteNo] + " ) is deleted. ");
                                 sMovieName = arrAltName;
                                 sMoviePrice = arrAltCost;
-
                             }
-
                             break;
-
                         //Update Movie name and cost
                         case "5":
                             //show the movie list for selecting
                             for (int i = 0; i < sMovieName.Length; i++)
                             {
-
                                 Console.WriteLine(" No." + (i + 1) + " Name : " + sMovieName[i] + " ( $" + sMoviePrice[i] + " )");
-
                             }
                             bool isCorrectNumber;
                             do
@@ -207,21 +166,17 @@ namespace Assignment4
                                         isCorrectNumber = false;
                                         break;
                                     }
-
                                 }
                                 if (isCorrectNumber)
                                 {
-
                                     //check for number is belong to list number
                                     if (int.Parse(strSelectNum) > sMovieName.Length)
                                     {
                                         Console.WriteLine(" Select the number in the list. ");
                                         isCorrectNumber = false;
-
                                     }
                                     else
                                     {
-
                                         Console.Write("Enter the new Movie Name : ");
                                         //replace new movie name
                                         sMovieName[int.Parse(strSelectNum) - 1] = Console.ReadLine();
@@ -241,33 +196,20 @@ namespace Assignment4
                                         sMoviePrice[int.Parse(strSelectNum) - 1] = newCost;
                                     }
                                 }
-
                             } while (!isCorrectNumber);
                             break;
                         case "6":
                             Console.WriteLine("You selected " + selectMovie + " and Total Cost is Tuition :" + tuitionInt + " dollars, Visa :" + visaInt + " dollars.");
-
                             break;
-
                         case "7":
                             isContinue = false;
                             break;
-
                         default:
                             Console.WriteLine("You entered wrong number, please try again.");
-
                             break;
                     }
-
-
-
                 } while (isContinue);
-
-
-
                 Console.ReadLine();
-
-
             }
             catch (FormatException)
             {
