@@ -13,8 +13,8 @@ namespace Assignment4
             try
             {
                 bool loop = true;
+                //Array was generated with four employees when the program is first run
                 string[] employeeName = new string[12] { "Liz StaceyBA", "Orville BaileyBA", "Mark RajkumarBA", "Jim EdwardsBA", "-", "-", "-", "-", "-", "-", "-", "-" };
-                //string[] employeeName = new string[12];
                 int[] brandNumberInt = new int[12];
                 bool number1;
 
@@ -155,3 +155,4 @@ namespace Assignment4
         }
     }
 }
+
