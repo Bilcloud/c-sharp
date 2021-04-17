@@ -1,0 +1,168 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Assignment4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Array generated with four employees when the program is first run
+            string[] employeeName = new string[12] { "Liz StaceyBA", "Orville BaileyBA", "Mark RajkumarBA", "Jim EdwardsBA", "-", "-", "-", "-", "-", "-", "-", "-" };
+            int[] brandNumberInt = new int[12];
+            bool number1;
+
+            //Controls do-while loop. 
+            bool loop = true;
+
+            //Console menu show up until User enter "E"
+            do
+            {
+                try
+                {
+                    Console.WriteLine("\nMENU: ");
+                    Console.WriteLine("---------------------------------------------");
+                    Console.WriteLine("A. To assign a new vehicle to a employee ");
+                    Console.WriteLine("B. Edit existing employee vehicle assignment ");
+                    Console.WriteLine("C. List all vehicle assignments ");
+                    Console.WriteLine("D. Delete registration information");
+                    Console.WriteLine("E. Exit the program");
+                    Console.WriteLine("\nPlease select one option from above (A, B, C, D or E) ");
+                    string option1 = Console.ReadLine();
+
+                    //Convert letters to Uppercase and delate spaces
+                    string option = option1.ToUpper().Trim();
+
+                    switch (option)
+                    {
+                        case "A":
+                            for (int i = 0; i < employeeName.Length; i++)
+                            {
+                                Console.Write("\nEnter the Employee Name : ");
+                                employeeName[i] = Console.ReadLine();
+
+                                //When user enter "DONE" Case "A" ends and goes back to Main menu 
+                                if (employeeName[i] != "DONE")
+                                {
+                                    do
+                                    {
+                                        number1 = true;
+                                        Console.Write("Enter the Brand Number : ");
+                                        string brandNumber = Console.ReadLine();
+                                        for (int ii = 0; ii < brandNumber.Length; ii++)
+                                        {
+                                            //If input is not digit, promts warning on the screen until user enters digit number
+                                            if (!char.IsDigit(brandNumber[ii]))
+                                            {
+                                                Console.WriteLine("This is not a number. Please enter a number between 1 and 4.\n ");
+                                                number1 = false;
+                                            }
+                                            else
+                                            {
+                                                brandNumberInt[i] = int.Parse(brandNumber);
+                                            }
+                                        }
+                                    } while (!number1);
+                                    Console.WriteLine("Your record has been saved");
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                                //If user enters number lower than 1 or bigger than 4 throws an exception
+                                if (brandNumberInt[i] < 1 || brandNumberInt[i] > 4)
+                                {
+                                    throw new Exception("Error! Input should be (1-4)");
+                                }
+                            }
+                            break;
+                        case "B":
+                            //Shows all registered information and allows user to make edit on existing list.
+                            for (int i = 0; i < employeeName.Length; i++)
+                            {
+                                Console.WriteLine((i + 1) + ". " + employeeName[i] + " - " + brandNumberInt[i]);
+                            }
+                            Console.Write("\nSelect a row number to update registration information (1-12) ");
+                            string choice = Console.ReadLine();
+                            Console.Write("Enter the Employee Name : ");
+                            employeeName[int.Parse(choice) - 1] = Console.ReadLine();
+                            Console.Write("Enter the Brand Number : ");
+                            int brandNew = int.Parse(Console.ReadLine());
+                            brandNumberInt[int.Parse(choice) - 1] = brandNew;
+                            Console.Write("The record is updated");
+                            break;
+                        case "C":
+                            //Shows all registered and edited information on the screen
+                            for (int i = 0; i < employeeName.Length; i++)
+                            {
+                                Console.WriteLine(employeeName[i] + " - " + brandNumberInt[i]);
+                            }
+                            Console.Write("Please press Enter to return Main Menu");
+                            break;
+                        case "D":
+                            //Shows all registered information and allows user to delete his choice.
+                            for (int i = 0; i < employeeName.Length; i++)
+                            {
+                                Console.WriteLine((i + 1) + ". " + employeeName[i] + " - " + brandNumberInt[i]);
+                            }
+                            Console.Write("\nChoose the number of registration you want to delete (1-12) ");
+                            int choice2 = int.Parse(Console.ReadLine());
+                            string answer = "Y";
+                            //Asks user if he is sure to delete existing input
+                            while (answer == ("Y"))
+                            {
+                                Console.Write("Do you want to continue? (Y/N)");
+                                answer = Console.ReadLine();
+                                string[] newEmployeeName = new string[12];
+                                int[] newBrandNumberInt = new int[12];
+                                for (int i = 0; i < choice2 - 1; i++)
+                                {
+                                    newEmployeeName[i] = employeeName[i];
+                                    newBrandNumberInt[i] = brandNumberInt[i];
+                                }
+                                for (int j = choice2; j < 12; j++)
+                                {
+                                    newEmployeeName[j - 1] = employeeName[j];
+                                    newBrandNumberInt[j - 1] = brandNumberInt[j];
+                                }
+                                employeeName = newEmployeeName;
+                                brandNumberInt = newBrandNumberInt;
+                                for (int i = 0; i < employeeName.Length; i++)
+                                {
+                                    Console.WriteLine(employeeName[i] + " - " + brandNumberInt[i]);
+                                }
+                            }
+                            break;
+                            //if user enters "E" while loop turns to False and terminate the program
+                        case "E":
+                            loop = false;
+                            break;
+                        default:
+                            Console.WriteLine("You entered invalid choice, please try again(A-D).\n");
+                            break;
+                    }
+                    //Console.ReadLine(); placed here just to check what is happenig after entering "E"
+                    Console.ReadLine();
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    Console.WriteLine("Index out of Range");
+                    Console.ReadLine();
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Format Exception");
+                    Console.ReadLine();
+                }
+                catch (Exception exlast)
+                {
+                    Console.WriteLine(exlast.Message);
+                    Console.ReadLine();
+                }
+            } while (loop);
+        }
+    }
+}
