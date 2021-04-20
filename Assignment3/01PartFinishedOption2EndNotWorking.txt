@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int userChoice;
+			do
+			{
+				Console.WriteLine("Menu");
+				Console.WriteLine("[1] Option 1");
+				Console.WriteLine("[2] Option 2");
+				Console.WriteLine("[3] Option 3\n");
+				Console.Write("Enter your option (1, 2, 3): ");
+				userChoice = int.Parse(Console.ReadLine());
+				switch (userChoice)
+				{
+					case 1:
+						int result = 1;
+						for (int i = 0; i < 25; i++)
+						{
+							if (i % 2 == 0)
+							{
+								result = i * 4;
+								Console.WriteLine(result);
+							}
+							else if (i == 3 || i == 11 || i == 21)
+							{
+								result = result - 3;
+								Console.WriteLine(result);
+							}
+							else
+							{
+								result = i + 7;
+								Console.WriteLine(result);
+							}
+						}
+						break;
+					case 2:
+
+						do
+						{
+							Console.Write("Enter your first number : ");
+							string firstNumber = Console.ReadLine();
+							Console.Write("Enter your second number : ");
+							string secondNumber = Console.ReadLine();
+
+							double firstNumber2 = Convert.ToDouble(firstNumber);
+							double secondNumber2 = Convert.ToDouble(secondNumber);
+							double result2 = firstNumber2 / secondNumber2;
+							Console.WriteLine("The result of the division is : " + result2 + "\n");
+						}
+						while (true);// && secondNumber != "END");
+						//while (firstNumber != "END");// && secondNumber != "END");
+						break;
+					case 3:
+						Console.Write("Thank you");
+						Console.ReadLine();
+						{
+							Environment.Exit(0);
+						}
+						break;
+					default:
+						Console.WriteLine("Invalid option entered \n");
+						break;
+				}
+
+			} while (true);
+			Console.ReadLine();
+		}
+	}
+}

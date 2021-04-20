@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;								//Bilyan Nikolov Section 4 InClass5
+													//Character refers to a single letter, a symbol or a number
+													//and a single character enclosed in single quotes.
+namespace InClass5BilyanNikolovS4                   //On the other hand, string refers to a set of characters
+{                                                   //and it is enclosed in double quotes.
+	class Program
+    {
+        static void Main(string[] args) 
+        {
+			Console.WriteLine("Please enter four strings:");
+			string first = Console.ReadLine();
+			string second = Console.ReadLine();
+			string third = Console.ReadLine();
+			string forth = Console.ReadLine();
+
+			int digitsCount = 0;
+			foreach (char c in first)
+			{
+				if (Char.IsDigit(c))
+					digitsCount++;
+			}
+
+			int lettersCount = 0;
+			foreach (char c in first)
+			{
+				if (Char.IsLetter(c))
+					lettersCount++;
+			}
+
+			int whiteSpaceCount = 0;
+			foreach (char c in first)
+			{
+				if (Char.IsWhiteSpace(c))
+					whiteSpaceCount++;
+			}
+			Console.WriteLine("\nThe First string has " + digitsCount + " numeric numbers, " + whiteSpaceCount + " white spaces and " + lettersCount + " letters.");
+			Console.Write("The Second string is ");
+			VowelUppercase(second.ToCharArray());
+
+			string thirdLast = third.Insert(4, "my inserted string");
+			Console.WriteLine("\nThe Third string: " + thirdLast);
+
+			string forthLast = forth.Remove(10, 5);
+			Console.WriteLine("The Fourth string: " + forthLast);
+
+			string sentenceSample = "Happiness can be found even in the darkest of times, if one only remembers to turn on the light.";
+			char[] delim = { ' ' };
+			string[] splitArray = sentenceSample.Split(delim);
+			var longest = splitArray.Where(s => s.Length == splitArray.Max(m => m.Length)).First();
+			Console.WriteLine("The longest string of the Sample sentence is the word: " + longest);
+
+			//The code below Outputs all the string in sentenceSample array
+			//for (int i = 0; i < splitArray.Length; i++)
+			//{
+			//	Console.WriteLine(splitArray[i]);
+			//}
+			Console.ReadLine();
+		}
+		static void VowelUppercase(char[] second)
+		{
+			int length = second.Length;
+
+			for (int i = 0; i < length; i++)
+			{
+				if (second[i] == 'a' || second[i] == 'e' || second[i] == 'i' || second[i] == 'o' || second[i] == 'u')
+				{
+					char longest = char.ToUpperInvariant(second[i]);
+					second[i] = longest;
+				}
+			}
+			foreach (char longest in second)
+				Console.Write(longest);
+		}
+	}
+}
