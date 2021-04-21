@@ -1,0 +1,158 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace A5
+{
+    class Program
+    {
+        static Person[] arr = new Person[2];
+        static void Main(string[] args)
+        {
+            //CRUD - Create, Read, Update, Delete
+            addPerson(); //create
+            DisplayPerson();//Overloaded Read
+            //DisplayPerson(arr); //Read
+            //DisplayPerson();//Overloaded Read
+            //RemovePerson(arr, "Public"); //Delete
+            UpdatePerson(arr, "Public", "new address");
+            //DisplayPerson(arr); //Read
+            DisplayPerson();
+            //arraySample();
+            //carSample();
+            Console.ReadLine();
+        }
+
+        private static void addPerson()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                arr[i] = new Person();
+                Console.Write("First Name:");
+                arr[i].firstName = Console.ReadLine();
+
+                Console.Write("Last Name:");
+                arr[i].lastName = Console.ReadLine();
+
+                //Console.Write("DoB:");
+                //arr[i].dob = Convert.ToDateTime(Console.ReadLine());
+
+                Console.Write("Address:");
+                arr[i].address = Console.ReadLine();
+
+                Console.Write("Is student:");
+                arr[i].isStudent = Convert.ToBoolean(Console.ReadLine());
+            }
+
+
+        }
+
+
+
+        //private static void DisplayPerson(Person[] x)
+        //{
+        //    for (int i = 0; i < x.Length; i++)
+        //    {
+        //        Console.WriteLine(x[i].firstName);
+        //        Console.WriteLine(x[i].lastName);
+        //        //Console.WriteLine(x[i].dob.ToString());
+        //        Console.WriteLine(x[i].address);
+        //        Console.WriteLine(x[i].isStudent.ToString());
+        //        //Console.WriteLine(x[i].getAge().ToString());
+        //    }
+        //}
+
+        private static void DisplayPerson()
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i].firstName);
+                Console.WriteLine(arr[i].lastName);
+                //Console.WriteLine(arr[i].dob.ToString());
+                Console.WriteLine(arr[i].address);
+                Console.WriteLine(arr[i].isStudent.ToString());
+                //Console.WriteLine(arr[i].getAge().ToString());
+            }
+        }
+
+        //private static void RemovePerson(Person[] x, string lastname)
+        //{
+        //    for (int i = 0; i < x.Length; i++)
+        //    {
+        //        if (lastname.ToUpper() == x[i].lastName.ToUpper())
+        //        {
+        //            x[i] = null;
+        //        }
+        //    }
+        //}
+
+        private static void UpdatePerson(Person[] arr, string lastname, string address)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (lastname.ToUpper() == arr[i].lastName.ToUpper())
+                {
+                    arr[i].address = address;
+                }
+            }
+        }
+
+        //private static void UpdatePerson(Person[] x, string lastname, string address)
+        //{
+        //    for (int i = 0; i < x.Length; i++)
+        //    {
+        //        if (lastname.ToUpper() == x[i].lastName.ToUpper())
+        //        {
+        //            x[i].address = address;
+        //        }
+        //    }
+        //}
+
+
+        private static void arraySample()
+        {
+            //The following creates an empty array and then fills it
+            int[] intArray = new int[6];
+            intArray[0] = 4;
+            intArray[1] = 8;
+            intArray[2] = 15;
+            intArray[3] = 16;
+            intArray[4] = 23;
+            intArray[5] = 42;
+
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                Console.WriteLine("Spooky number " + i + " is: " + intArray[i]);
+            }
+
+            //The following creates an empty with values
+            string[] stringArray = new string[] { "Jack", "Sawyer", "Loche", "Hurley", "Kate" };
+
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                string subString = stringArray[i].Substring(0, 3);
+                Console.WriteLine(subString);
+            }
+
+            Console.ReadLine();
+        }
+
+        //private static void carSample()
+        //{
+        //    Car car1 = new Car();
+        //    Car car2 = new Car("Ford", "Mustang", "black");
+
+
+
+        //    car1.Describe();
+        //    car2.Describe();
+
+        //    Console.ReadLine();
+        //}
+
+    }
+
+
+}

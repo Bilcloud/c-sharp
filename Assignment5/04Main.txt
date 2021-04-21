@@ -1,0 +1,80 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace A5
+{
+    class Program
+    {
+
+        static Gym[] arr = new Gym[1];
+        static void Main(string[] args)
+        {
+            addPerson();
+            DisplayPerson();
+            Edit(arr, "Public", "new address");
+            Console.ReadLine();
+        }
+        //private static void MemberNumber()
+        //{
+        //    Console.WriteLine("Enter the number of the gym members");
+        //    int gymNumber = Convert.ToInt32(Console.ReadLine());
+        //    int[] gym = new int[gymNumber];
+        //}
+        private static void addPerson()
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = new Gym();
+                Console.Write("Membership Code:");
+                arr[i].code = Console.ReadLine();
+
+                Console.Write("Name:");
+                arr[i].name = Console.ReadLine();
+
+                Console.Write("Is free:");
+                arr[i].statusFree = Convert.ToBoolean(Console.ReadLine());
+            }
+        }
+
+        private static void DisplayPerson()
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i].code);
+                Console.WriteLine(arr[i].name);
+                Console.WriteLine(arr[i].statusFree.ToString());
+            }
+        }
+
+        private static void Edit(Gym[] arr, string lastname, string name)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (lastname.ToUpper() == arr[i].name.ToUpper())
+                {
+                    arr[i].name = name;
+                }
+            }
+        }
+
+        //private static void UpdatePerson(Person[] x, string lastname, string address)
+        //{
+        //    for (int i = 0; i < x.Length; i++)
+        //    {
+        //        if (lastname.ToUpper() == x[i].lastName.ToUpper())
+        //        {
+        //            x[i].address = address;
+        //        }
+        //    }
+        //}
+
+
+   
+
+    }
+
+
+}
