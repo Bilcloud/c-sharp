@@ -1,0 +1,167 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp4
+{
+	class Program
+	{
+		static Gym[] arr = new Gym[20];
+		static void Main(string[] args)
+		{
+			string optionString;
+
+
+            try
+		    { 
+
+			do
+			{
+				Console.Clear();
+				Console.WriteLine("MENU");
+				Console.WriteLine("----------------------");
+				Console.WriteLine("A. Add a number");
+				Console.WriteLine("B. Edit an existing member record");
+				Console.WriteLine("C. Display the name, Membership Status, and Membership code ");
+				Console.WriteLine("D. Exit the program");
+				string option;
+
+
+                    do
+				{
+					Console.WriteLine("\nPlease select one option from above (A, B, C or D) ");
+					optionString = Console.ReadLine();
+					option = optionString.ToUpper().Trim();
+				}
+				while (option != "A" && option != "B" && option != "C" && option != "D");
+
+				switch (option)
+                {
+                        case "A"://Adding membership informations
+
+                            //AddMember();
+                            for (int i = 0; i < arr.Length; i++)
+                            {
+                                arr[i] = new Gym();
+                                Console.Write("\nMembership Code:");
+                                arr[i].code = Console.ReadLine();
+                                if (arr[i].code != "QUIT")//If user enters "QUIT" he will return to Main menu
+                                {
+                                    Console.Write("Name:");
+                                    arr[i].name = Console.ReadLine();
+                                    if (arr[i].name != "QUIT")//If user enters "QUIT" he will return to Main menu
+                                    {
+                                        Console.Write("Is free:");
+                                        arr[i].statusFree = Convert.ToBoolean(Console.ReadLine());
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+
+                            break;
+
+                        case "B"://Editing existing information
+
+                            //EditMemberInformation();
+                            for (int i = 0; i < arr.Length; i++)
+                            {
+                                Console.WriteLine((i + 1) + ". " + arr[i].code + " - " + arr[i].name[i]);
+                            }
+                            Console.Write("\nSelect a row number to update registration information (1-20) ");
+                            string choice = Console.ReadLine();
+                            Console.Write("Enter the Code : ");
+                            arr[int.Parse(choice) - 1].code = Console.ReadLine();
+                            Console.Write("Enter the Name : ");
+                            arr[int.Parse(choice) - 1].name = Console.ReadLine();
+                            Console.Write("Enter the Status : ");
+                            arr[int.Parse(choice) - 1].statusFree = bool.Parse(Console.ReadLine());
+
+                            break;
+
+                        case "C"://Displaying membership information
+
+                            //DisplayMemberInformation();
+                            for (int i = 0; i < arr.Length; i++)
+                            {
+                                Console.WriteLine(arr[i].code);
+                                Console.WriteLine(arr[i].name);
+                                Console.WriteLine(arr[i].statusFree.ToString());
+                            }
+                            break;
+
+                        case "D":
+
+						    Environment.Exit(0);
+						    break;
+
+						default:
+
+							option = "Invalid entry";
+						    break;
+				}
+				Console.WriteLine("Press any key to return Menu");
+				Console.ReadLine();
+			}
+			while (true);
+			}
+			catch (Exception e)
+            {
+				Console.WriteLine(e.Message);
+			}
+            //private static void AddMember()
+            //{
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    arr[i] = new Gym();
+            //    Console.Write("\nMembership Code:");
+            //    arr[i].code = Console.ReadLine();
+            //    if (arr[i].code != "QUIT")
+            //    {
+            //        Console.Write("Name:");
+            //        arr[i].name = Console.ReadLine();
+            //        if (arr[i].name != "QUIT")
+            //        {
+            //            Console.Write("Is free:");
+            //            arr[i].statusFree = Convert.ToBoolean(Console.ReadLine());
+            //        }
+            //        else
+            //        {
+            //            break;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        break;
+            //    }
+            //}
+            //}
+            //private static void DisplayMemberInformation()
+            //{
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        Console.WriteLine(arr[i].code);
+            //        Console.WriteLine(arr[i].name);
+            //        Console.WriteLine(arr[i].statusFree.ToString());
+            //    }
+            //private static void EditMembership(Gym[] arr, string code, string name, bool statusFree)
+            //{
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        if (code.ToUpper() == arr[i].code.ToUpper())
+            //        {
+            //            arr[i].name = name;
+            //        }
+            //    }
+            //}
+        }
+    }
+}

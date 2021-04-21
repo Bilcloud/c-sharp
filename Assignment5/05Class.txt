@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp4
+{
+    class Gym
+    {
+        static Gym[] arr = new Gym[10];
+        public Gym()
+        {
+
+        }
+
+        public string code;
+        public string name;
+        public bool statusFree;
+        static void addMember()
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = new Gym();
+                Console.Write("Membership Code:");
+                arr[i].code = Console.ReadLine();
+
+                Console.Write("Name:");
+                arr[i].name = Console.ReadLine();
+
+                Console.Write("Is free:");
+                arr[i].statusFree = Convert.ToBoolean(Console.ReadLine());
+            }
+        }
+    }
+}

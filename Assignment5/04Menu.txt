@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp4
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string optionString;
+
+		try
+			{ 
+
+			do
+			{
+				Console.Clear();
+				Console.WriteLine("MENU");
+				Console.WriteLine("----------------------");
+				Console.WriteLine("A. Add a number");
+				Console.WriteLine("B. Edit an existing member record");
+				Console.WriteLine("C. Display the name, Membership Status, and Membership code ");
+				Console.WriteLine("D. Exit the program");
+				string option;
+				do
+				{
+
+					Console.WriteLine("\nPlease select one option from above (A, B, C or D) ");
+					optionString = Console.ReadLine();
+					option = optionString.ToUpper().Trim();
+				}
+				while (optionString != "a" && optionString != "b" && optionString != "c" && optionString != "d");
+
+				switch (option)
+                {
+					//case "a":
+					//	optionOne();
+					//	break;
+					//case "b":
+					//	optionTwo();
+					//	break;
+					//case "c":
+					//	optionThree();
+					//	break;
+					case "d":
+						Environment.Exit(0);
+						break;
+				}
+				Console.WriteLine("Press any key to continue");
+				Console.ReadLine();
+			}
+			while (true);
+			}
+			catch (Exception e)
+            {
+				Console.WriteLine(e.Message);
+			}
+			Console.ReadLine();
+		}
+	}
+}

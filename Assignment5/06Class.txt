@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp4
+{
+    class Gym
+    {
+        static Gym[] arr = new Gym[10];
+        public Gym()
+        {
+
+        }
+
+        public string code;
+        public string name;
+        public bool statusFree;
+        static void addMember()
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = new Gym();
+                Console.Write("Membership Code:");
+                arr[i].code = Console.ReadLine();
+
+                Console.Write("Name:");
+                arr[i].name = Console.ReadLine();
+
+                Console.Write("Is free:");
+                arr[i].statusFree = Convert.ToBoolean(Console.ReadLine());
+            }
+        }
+        static void EditMemberInformation()
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine((i + 1) + ". " + arr[i].code + " - " + arr[i].name[i]);
+            }
+            Console.Write("\nSelect a row number to update registration information (1-20) ");
+            string choice = Console.ReadLine();
+            Console.Write("Enter the Code : ");
+            arr[int.Parse(choice) - 1].code = Console.ReadLine();
+            Console.Write("Enter the Name : ");
+            arr[int.Parse(choice) - 1].name = Console.ReadLine();
+            Console.Write("Enter the Status : ");
+            arr[int.Parse(choice) - 1].statusFree = bool.Parse(Console.ReadLine());
+        }
+        static void DisplayMemberInformation()
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine(arr[i].code);
+                Console.WriteLine(arr[i].name);
+                Console.WriteLine(arr[i].statusFree.ToString());
+            }
+        }
+    }
+}

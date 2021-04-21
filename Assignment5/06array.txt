@@ -1,0 +1,6 @@
+        //private static void MemberNumber()
+        //{
+        //    Console.WriteLine("Enter the number of the gym members");
+        //    int gymNumber = Convert.ToInt32(Console.ReadLine());
+        //    int[] gym = new int[gymNumber];
+        //}
