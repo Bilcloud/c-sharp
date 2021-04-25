@@ -1,0 +1,45 @@
+using System;
+					
+public class Program
+{
+	static string firstString;
+	public static void Main()
+	{
+		string sInput;
+		int iInput;
+		do
+		{
+			Console.WriteLine("1. First String");
+			Console.WriteLine("2. Second String");
+			do
+			{
+				Console.WriteLine("Enter a number to proceed: ");
+				sInput = Console.ReadLine();
+				if (!Int32.TryParse(sInput, out iInput))
+				{
+					Console.WriteLine("Numeric entry between 1-7 expected");
+					continue;
+				}
+			}
+			while (iInput !=1 && iInput !=2 && iInput !=3 && iInput !=4 && iInput !=5 && iInput !=6 && iInput !=7);
+			switch (iInput)
+			{
+				case 1:
+						int numDigits = 0;
+						char letter;
+						Console.WriteLine("Enter the first string: ");
+						firstString = Console.ReadLine();
+					
+						for (int i = 0; i < firstString.Length; i++)
+						{
+							letter = firstString[i];
+							if (char.IsDigit(letter))
+								numDigits++;
+						}
+				break;
+			}
+		}
+		while(true);
+		
+	}
+}
