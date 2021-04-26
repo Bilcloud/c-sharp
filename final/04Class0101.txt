@@ -1,0 +1,29 @@
+using System;
+
+class Book
+{
+	public string title;
+	public string author;
+	public int pages;
+}
+public Book(string title, string author, int pages)
+{
+	title = title;
+	author = author;
+	pages = pages;
+}
+public class Program
+{
+	public static void Main()
+	{
+		Book book1 = new Book ("asd", "ftyfdyt", 67);
+		ali.title = "Ali";
+		ali.author = "demir";
+		ali.pages = 20;
+		Book veli = new Book ();
+		veli.title = "ali demir";
+		veli.author = "ali veli demir";
+		veli.pages = 2;
+		Console.WriteLine("Ali'nin bilgileri: " + ali.title);
+	}
+}

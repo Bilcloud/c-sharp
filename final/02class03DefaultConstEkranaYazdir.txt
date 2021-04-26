@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Candy
+{
+    class Candy
+    {
+
+        
+        public int id;
+        public string name;
+        public string flavor;
+        public double price;
+
+        public Candy()
+        {
+            id = 0;
+            name = "No name";
+            flavor = "No flavor";
+            price = 3.00;
+        }
+        public Candy(int id1, string name1, string flavor1, double price1)
+        {
+            id = id1;
+            name = name1;
+            flavor = flavor1;
+            price = price1;
+        }
+        //public Candy(int id1, string name1, string flavor1, double price1)
+        //{
+        //    id = 0;
+        //    name = "No name";
+        //    flavor = "No flavor";
+        //    price = 3.00;
+        //}
+
+    }
+}

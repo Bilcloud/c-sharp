@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Candy
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            //Candy();
+            //Console.WriteLine(Candy());
+            Candy default1 = new Candy();
+            //Candy default1 = new Candy(3, "ccccc","asdr", 3.0);
+            //Book book2 = new Book("Ali", "Veli", 90);
+            Console.WriteLine(default1.id);
+            Console.WriteLine(default1.name);
+            Console.WriteLine(default1.flavor);
+            Console.WriteLine(default1.price);
+            //Console.WriteLine(book1.Honors());
+
+            //Console.WriteLine(book2.name);
+            //Console.WriteLine(book2.major);
+            //Console.WriteLine(book2.gpa);
+            Console.Read();
+        }
+    }
+}
