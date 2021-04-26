@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Programci a = new Programci();
+            Programci b = new Programci(23, "Ziya");
+            Programci c = new Programci(27, "Kamuran", "Kamiloğlu");
+            Programci d = new Programci(30, "Hayrettin", "Kütükçü", "C#");
+
+
+            a.showOzellikler();
+            b.showOzellikler();
+            c.showOzellikler();
+            d.showOzellikler();
+
+            Console.ReadLine();
+        }
+    }
+}
